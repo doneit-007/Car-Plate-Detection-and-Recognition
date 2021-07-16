@@ -17,14 +17,13 @@ This basically uses fast fourier transform to separate multiplicative components
 <br />
 And then these components are filtered using high pass and low pass filters.
 <br />
-<br />
 Original Image
 <br />
-![image](https://user-images.githubusercontent.com/60650532/125931579-333a903d-d75f-442c-9a2f-4a265cdd6f96.png)
+![image](https://user-images.githubusercontent.com/60650532/125934841-cff8c862-4cd8-4699-920b-be0d2e69cb7f.png)
 <br />
 After Homomorphic transform
 <br />
-![image](https://user-images.githubusercontent.com/60650532/125931598-a0f5c605-8057-41f9-834b-9f21f9be2c17.png)
+![image](https://user-images.githubusercontent.com/60650532/125934864-85f3162f-a32f-409b-a7f4-5e4b0c1c9e87.png)
 <br />
 Now to further enhance the quality of image we applied another image processing technique called histogram equalization.
 <br />
@@ -66,21 +65,13 @@ def apply_brightness_contrast(input_img, brightness = 0, contrast = 0):
 Initial Image
 
 ![image](https://user-images.githubusercontent.com/60650532/125932371-f49efaea-1162-4a2a-abad-c471dfee884d.png)
-After Histogram Equalization
-<br />
+After Histogram Equalization<br />
 ![image](https://user-images.githubusercontent.com/60650532/125932426-b4a81d20-8ad1-4db4-9d5f-c27b70841275.png)
-After homomorphic filteringIncreasing contrast and brightness
-<br />
-![image](https://user-images.githubusercontent.com/60650532/125932451-b152a6e3-f74d-4c41-b255-a850f58d94fa.png)
-<br />
-to
-![image](https://user-images.githubusercontent.com/60650532/125932477-e8bb0923-df35-4be1-8d4a-07f1a6cfaf65.png)
-<br />
-Now finally we get the image which can easily be thresholded using opencv.
-<br />
-Now comes a question whether to choose adaptive thresholding or normal thresholding or some otsu thresholding.
-<br />
-
+After homomorphic filtering and Increasing contrast and brightness <br />
+![image](https://user-images.githubusercontent.com/60650532/125932451-b152a6e3-f74d-4c41-b255-a850f58d94fa.png)<br />
+![image](https://user-images.githubusercontent.com/60650532/125932477-e8bb0923-df35-4be1-8d4a-07f1a6cfaf65.png)<br />
+Now finally we get the image which can easily be thresholded using opencv.<br />
+Now comes a question whether to choose adaptive thresholding or normal thresholding or some otsu thresholding.<br />
 We tried all and we found that adaptive thresholding is not working for all scenarios sometimes it masks the noise in the background also and also sometime when the characters are too close than adaptive thresholding merges two or more characters.
 <br />
 So we decided to use simple thresholding with a very low threshold as in previous preprocessing techniques we already made the characters very much darker so using low threshold masks only very dark areas of image.
